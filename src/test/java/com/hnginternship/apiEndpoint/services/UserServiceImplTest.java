@@ -14,7 +14,7 @@ class UserServiceImplTest {
     UserService userService;
     @Test
     void userDetailsCanBeDisplayedTest() {
-        User user = new User("Ademiju1",true,27,
+        User user = new User("Ademiju",true,27,
                 "Ademiju Taiwo is a Java Backend Engineer. Looking to collaborate and hone my skills from beginner to mid-level");
         assertEquals(user.getSlackUsername(),(userService.getUserDetails().getSlackUsername()));
         assertEquals(user.getBackend(),(userService.getUserDetails().getBackend()));
