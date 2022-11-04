@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class ArithmeticRequest {
-    private OperationType operation_type;
+    private String operation_type;
     private int x;
     private int y;
 
