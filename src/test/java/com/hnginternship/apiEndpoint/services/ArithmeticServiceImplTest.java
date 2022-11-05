@@ -16,54 +16,54 @@ class ArithmeticServiceImplTest {
 
     @Test
     void arithmeticMathOperationCanPerformAdditionTest() {
-        ArithmeticRequest arithmeticRequest = new ArithmeticRequest(OperationType.addition,3,2);
+        ArithmeticRequest arithmeticRequest = new ArithmeticRequest("addition",3,2);
         ArithmeticResponse arithmeticResponse = arithmeticService.performMathOperation(arithmeticRequest);
         assertEquals(arithmeticResponse.getResult(),5);
     }
     @Test
     void arithmeticMathOperationCanPerformSubtractionTest() {
-        ArithmeticRequest arithmeticRequest = new ArithmeticRequest(OperationType.subtraction,3,2);
+        ArithmeticRequest arithmeticRequest = new ArithmeticRequest("subtraction",3,2);
         ArithmeticResponse arithmeticResponse = arithmeticService.performMathOperation(arithmeticRequest);
         assertEquals(arithmeticResponse.getResult(),1);
     }
     @Test
     void arithmeticMathOperationCanPerformMultiplicationTest() {
-        ArithmeticRequest arithmeticRequest = new ArithmeticRequest(OperationType.multiplication,3,2);
+        ArithmeticRequest arithmeticRequest = new ArithmeticRequest("multiplication",3,2);
         ArithmeticResponse arithmeticResponse = arithmeticService.performMathOperation(arithmeticRequest);
         assertEquals(arithmeticResponse.getResult(),6);
     }
     @Test
     void arithmeticMathOperationReturnCorrectOperatorTypeTest() {
-        ArithmeticRequest arithmeticRequest1 = new ArithmeticRequest(OperationType.addition,3,2);
+        ArithmeticRequest arithmeticRequest1 = new ArithmeticRequest("addition",3,2);
         ArithmeticResponse arithmeticResponse1 = arithmeticService.performMathOperation(arithmeticRequest1);
-        ArithmeticRequest arithmeticRequest2 = new ArithmeticRequest(OperationType.subtraction,3,2);
+        ArithmeticRequest arithmeticRequest2 = new ArithmeticRequest("subtraction",3,2);
         ArithmeticResponse arithmeticResponse2 = arithmeticService.performMathOperation(arithmeticRequest2);
-        ArithmeticRequest arithmeticRequest3 = new ArithmeticRequest(OperationType.multiplication,3,2);
+        ArithmeticRequest arithmeticRequest3 = new ArithmeticRequest("multiplication",3,2);
         ArithmeticResponse arithmeticResponse3 = arithmeticService.performMathOperation(arithmeticRequest3);
         assertEquals(arithmeticResponse1.getResult(),5);
-        assertEquals(arithmeticResponse1.getOperationType(), OperationType.addition);
+        assertEquals(arithmeticResponse1.getOperationType(), OperationType.ADDITION);
         assertEquals(arithmeticResponse2.getResult(),1);
-        assertEquals(arithmeticResponse2.getOperationType(), OperationType.subtraction);
+        assertEquals(arithmeticResponse2.getOperationType(), OperationType.SUBTRACTION);
         assertEquals(arithmeticResponse3.getResult(),6);
-        assertEquals(arithmeticResponse3.getOperationType(), OperationType.multiplication);
+        assertEquals(arithmeticResponse3.getOperationType(), OperationType.MULTIPLICATION);
     }
     @Test
     void arithmeticMathOperationReturnSlackUsernameTest() {
-        ArithmeticRequest arithmeticRequest1 = new ArithmeticRequest(OperationType.addition,3,2);
+        ArithmeticRequest arithmeticRequest1 = new ArithmeticRequest("addition",3,2);
         ArithmeticResponse arithmeticResponse1 = arithmeticService.performMathOperation(arithmeticRequest1);
-        ArithmeticRequest arithmeticRequest2 = new ArithmeticRequest(OperationType.subtraction,3,2);
+        ArithmeticRequest arithmeticRequest2 = new ArithmeticRequest("subtraction",3,2);
         ArithmeticResponse arithmeticResponse2 = arithmeticService.performMathOperation(arithmeticRequest2);
-        ArithmeticRequest arithmeticRequest3 = new ArithmeticRequest(OperationType.multiplication,3,2);
+        ArithmeticRequest arithmeticRequest3 = new ArithmeticRequest("multiplication",3,2);
         ArithmeticResponse arithmeticResponse3 = arithmeticService.performMathOperation(arithmeticRequest3);
         assertEquals(arithmeticResponse1.getSlackUsername(),"Ademiju");
         assertEquals(arithmeticResponse2.getSlackUsername(),"Ademiju");
         assertEquals(arithmeticResponse3.getSlackUsername(),"Ademiju");
     }
 
-//    @Test
-//    void performMathOperationWithIncorrectOperator_ThrowsException(){
-//        ArithmeticRequest arithmeticRequest = new ArithmeticRequest("division",3,2);
-//       ;
-//        assertThatThrownBy(()-> arithmeticService.performMathOperation(arithmeticRequest)).isInstanceOf(ArithmeticException.class).hasMessage("OperatorType not Valid");
-//    }
+    @Test
+    void performMathOperationWithIncorrectOperator_ThrowsException(){
+        ArithmeticRequest arithmeticRequest = new ArithmeticRequest("division",3,2);
+        ;
+        assertThatThrownBy(()-> arithmeticService.performMathOperation(arithmeticRequest)).isInstanceOf(ArithmeticException.class).hasMessage("OperatorType not Valid");
+    }
 }
