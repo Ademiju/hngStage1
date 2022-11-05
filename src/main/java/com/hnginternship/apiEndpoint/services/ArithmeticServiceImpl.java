@@ -28,7 +28,7 @@ public class ArithmeticServiceImpl implements ArithmeticService{
                 throw new ArithmeticException("OperatorType not Valid");
         }
         ArithmeticResponse arithmeticResponse = new ArithmeticResponse();
-        arithmeticResponse.setOperationType(OperationType.valueOf(operatorType));
+        arithmeticResponse.setOperation_type(OperationType.valueOf(operatorType));
         arithmeticResponse.setResult(result);
         arithmeticResponse.setSlackUsername("Ademiju");
         return arithmeticResponse;
