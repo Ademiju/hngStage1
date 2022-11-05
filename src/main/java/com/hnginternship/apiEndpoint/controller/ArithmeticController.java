@@ -15,7 +15,7 @@ public class ArithmeticController {
     @PostMapping("/math")
     public ResponseEntity<?> performArithmetic(@RequestBody ArithmeticRequest arithmeticRequest){
         try {
-            return new ResponseEntity<>(arithmeticService.performMathOperation(arithmeticRequest), HttpStatus.FOUND);
+            return new ResponseEntity<>(arithmeticService.performMathOperation(arithmeticRequest), HttpStatus.OK);
         } catch (ArithmeticException error) {
             return new ResponseEntity<>(error.getMessage(), HttpStatus.BAD_REQUEST);
         }

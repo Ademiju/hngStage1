@@ -1,4 +1,5 @@
 package com.hnginternship.apiEndpoint.datas;
 
-public enum OperationType { ADDITION, SUBTRACTION, MULTIPLICATION
+public enum OperationType {
+    addition, subtraction, multiplication
 }
