@@ -12,16 +12,16 @@ public class ArithmeticServiceImpl implements ArithmeticService{
 
     @Override
     public ArithmeticResponse performMathOperation(ArithmeticRequest arithmeticRequest) {
-        String operatorType = arithmeticRequest.getOperation_type().toUpperCase();
+        String operatorType = arithmeticRequest.getOperation_type().toLowerCase(Locale.ROOT);
         int result = 0;
         switch (operatorType){
-            case "ADDITION":
+            case "addition":
                 result = arithmeticRequest.getX() + arithmeticRequest.getY();
                 break;
-            case "SUBTRACTION":
+            case "subtraction":
                 result = arithmeticRequest.getX() - arithmeticRequest.getY();
                 break;
-            case "MULTIPLICATION":
+            case "multiplication":
                 result = arithmeticRequest.getX() * arithmeticRequest.getY();
                 break;
             default:

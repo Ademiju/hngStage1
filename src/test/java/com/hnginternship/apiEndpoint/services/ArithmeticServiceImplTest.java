@@ -41,11 +41,11 @@ class ArithmeticServiceImplTest {
         ArithmeticRequest arithmeticRequest3 = new ArithmeticRequest("multiplication",3,2);
         ArithmeticResponse arithmeticResponse3 = arithmeticService.performMathOperation(arithmeticRequest3);
         assertEquals(arithmeticResponse1.getResult(),5);
-        assertEquals(arithmeticResponse1.getOperation_type(), OperationType.ADDITION);
+        assertEquals(arithmeticResponse1.getOperation_type(), OperationType.addition);
         assertEquals(arithmeticResponse2.getResult(),1);
-        assertEquals(arithmeticResponse2.getOperation_type(), OperationType.SUBTRACTION);
+        assertEquals(arithmeticResponse2.getOperation_type(), OperationType.subtraction);
         assertEquals(arithmeticResponse3.getResult(),6);
-        assertEquals(arithmeticResponse3.getOperation_type(), OperationType.MULTIPLICATION);
+        assertEquals(arithmeticResponse3.getOperation_type(), OperationType.multiplication);
     }
     @Test
     void arithmeticMathOperationReturnSlackUsernameTest() {
