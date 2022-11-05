@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ArithmeticResponse {
     private String slackUsername;
-    private OperationType operationType;
+    private OperationType operation_type;
     private int result;
 
 }
